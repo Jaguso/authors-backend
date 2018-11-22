@@ -11,6 +11,15 @@ const createAuthor = async(req, res) => {
 }
 
 
+const getAllAuthors = async(req, res) => {
+
+    let allAuthors = await Author.findAll()
+
+    return res.status(200).json(allAuthors);
+}
+
+
 module.exports = {
-    createAuthor
+    createAuthor,
+    getAllAuthors
 }
