@@ -19,7 +19,15 @@ const getAllAuthors = async(req, res) => {
 }
 
 
+const getOneAuthor = async(req, res) => {
+
+    let getAuthor = await Author.findOne({where:{id: req.params.id}})
+
+    return res.status(200).json(getAuthor)
+}
+
 module.exports = {
     createAuthor,
-    getAllAuthors
+    getAllAuthors,
+    getOneAuthor
 }
