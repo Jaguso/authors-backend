@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Books.associate = function(models) {
     // associations can be defined here
     Books.hasMany(models.Chapters)
-    Books.belongsTo(models.Author)
+    Books.belongsTo(models.Author, {foreignKey: "authorId"})
   };
   return Books;
 };

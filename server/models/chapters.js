@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Chapters.associate = function(models) {
     // associations can be defined here
-    Chapters.belongsTo(models.Books)
+    Chapters.belongsTo(models.Books, {foreignKey: "bookId"})
   };
   return Chapters;
 };

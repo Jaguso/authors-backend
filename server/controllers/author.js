@@ -22,6 +22,7 @@ const getAllAuthors = async(req, res) => {
 const getOneAuthor = async(req, res) => {
 
     let getAuthor = await Author.findOne({where:{id: req.params.id}})
+    console.log(req.params.id) //esto marca indefinido, excepto si ponemos id
 
     return res.status(200).json(getAuthor)
 }
